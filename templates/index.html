@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Reservoir Prediction</title>
+
+    <script src="https://kit.fontawesome.com/47101d2035.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-image: url('https://img.freepik.com/premium-photo/abstract-blue-water-texture-background-showcasing-ripples-waves-surface-sea-ocean-ideal-design-banners-wallpaper-concepts-seamless-pattern_965119-65141.jpg');
+            background-size: cover; /* Cover the entire viewport */
+            background-position: center; /* Center the background image */
+            font-family: Arial, sans-serif; /* Change font family */
+            color: white; /* Default text color */
+        }
+
+        .container {
+            text-align: center;
+            background-color: rgb(177, 206, 240); /* Slightly transparent background for the container */
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            color: #ffffff; /* White color for header */
+            font-weight: 700;
+            margin-bottom: 20px; /* Space below header */
+        }
+
+        .form-group input {
+            margin-bottom: 15px; /* Space between input fields */
+            border: none;
+            border-radius: 5px; /* Rounded corners for inputs */
+            padding: 15px; /* Increased padding for inputs */
+        }
+
+        .form-group input:focus {
+            outline: none; /* Remove outline on focus */
+            box-shadow: 0 0 5px rgba(255, 255, 255, 0.6); /* Light shadow on focus */
+        }
+
+        .btn {
+            background-color: #3c7dc2; /* Darker blue for button */
+            border: none;
+            border-radius: 5px;
+            padding: 12px;
+            font-size: 18px;
+        }
+
+        .btn:hover {
+            background-color: #357ab8; /* Darker blue on hover */
+        }
+
+        .footer {
+            margin-top: 20px; /* Space above footer */
+            color: #fff; /* White color for footer text */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>
+            <i class="fas fa-water"></i> Water Reservoir Prediction
+        </h1>
+        <form action="{% url 'result' %}" method="GET">
+            {% csrf_token %}
+            <div class="form-group">
+                <input class="form-control" placeholder='POONDI (in cubic feet)' required type="text" name='POONDI'>
+            </div>
+            <div class="form-group">
+                <input class="form-control" placeholder='CHOLAVARAM (in cubic feet)' required type="text" name='CHOLAVARAM'>
+            </div>
+            <div class="form-group">
+                <input class="form-control" placeholder='REDHILLS (in cubic feet)' required type="text" name='REDHILLS'>
+            </div>
+            <div class="form-group">
+                <input class="form-control" placeholder='CHEMBARAMBAKKAM (in cubic feet)' required type="text" name='CHEMBARAMBAKKAM'>
+            </div>
+            <input class="btn btn-lg btn-block" type="submit" value='Predict'>
+        </form>
+        <div class="footer">
+            <p>&copy; 2024 Water Management System</p>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url("https://img.freepik.com/premium-photo/water-ripples-material-structure-background-generative-ai_922081-69289.jpg"); /* Use your static image path */
+      background-size: cover; /* Ensure the image covers the entire viewport */
+      background-position: center; /* Center the image */
+      background-repeat: no-repeat; /* Prevent repeating the image */
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      color: #000000; /* Default text color set to white */
+    }
+
+    form {
+      background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent background for the form */
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      width: 300px;
+      backdrop-filter: blur(5px); /* Adds a blur effect behind the form */
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold; /* Bold font for labels */
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    input:focus {
+      border-color: #4caf50; /* Change border color on focus */
+      outline: none;
+    }
+
+    button {
+      background-color: #4caf50;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 16px; /* Increase button font size */
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    p {
+      text-align: center;
+      margin-top: 15px;
+      color: #333; /* Darker color for better visibility */
+    }
+
+    a {
+      color: #4caf50; /* Link color */
+      text-decoration: none; /* Remove underline */
+    }
+
+    a:hover {
+      text-decoration: underline; /* Underline on hover */
+    }
+  </style>
+
+  <title>Login Page</title>
+</head>
+<body>
+  <form method="post">
+    {% csrf_token %}
+    <h1>Login</h1>
+
+    <label for="username">Username</label>
+    <input type="text" placeholder="Enter Username" id="username" name="username" required>
+
+    <label for="password">Password</label>
+    <input type="password" placeholder="Password" id="password" name="pass" required>
+
+    <button type="submit">Log In</button>
+    <p>You need an account to continue. <a href="{% url 'signup' %}">Sign up</a></p>
+  </form>
+</body>
+</html>
